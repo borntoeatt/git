@@ -16,7 +16,6 @@ pipeline {
                     sh """
                         python3 hello.py \
                             --name "${author}" \
-                            --greeting "${randGreeting}" \
                             --build-number "${BUILD_NUMBER}"
                     """
                 }
@@ -24,6 +23,4 @@ pipeline {
         }
     }
 }
-
-
 // This Jenkinsfile defines a simple CI/CD pipeline with two stages: Checkout and Run Hello.
