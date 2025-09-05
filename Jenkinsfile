@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // The repository is already checked out by Jenkins using the SCM credentials,
                 // so we don’t need another 'git' command here.
-                sh 'python3 hello.py --name Jenkins'
+                sh 'python3 hello.py'
             }
         }
     }
