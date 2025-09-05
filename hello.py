@@ -11,7 +11,7 @@ class Greeter:
 
 def main():
     parser = argparse.ArgumentParser(description="A fancy Hello World program.")
-    parser.add_argument("--name", type=str, help="Who to greet", default="World")
+    parser.add_argument("--name", type=str, help="Who to greet", default="Jenkins Majstora")
     args = parser.parse_args()
 
     greeter = Greeter(args.name)
