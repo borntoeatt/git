@@ -4,9 +4,12 @@ pipeline {
     stages {
         stage('Run Hello') {
             steps {
-                // The repository is already checked out by Jenkins using the SCM credentials,
-                // so we don’t need another 'git' command here.
-                sh 'python3 hello.py'
+                // Get the latest Git commit author
+                script {
+                    def author = sh(script: "git log -1 --pretty=format:'%an'", returnStdout: true).trim()
+                    // Run your Python script with the commit author as the name
+                    sh "python3 hello.py --name \"${author}\""
+                }
             }
         }
     }
