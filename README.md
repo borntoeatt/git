@@ -1,0 +1,1 @@
+This is a test Python + Jenkins project that prints a fancy, timestamped greeting every build. Each build greets the latest Git commit author with random greetings, random emojis, and optional ASCII art. Perfect for sh*t-and-giggles in your CI/CD pipeline.
