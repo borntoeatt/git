@@ -6,27 +6,23 @@ try:
 except ImportError:
     Figlet = None
 
-# List of random greetings
 greetings = ["Hello", "Howdy", "Yo", "Greetings", "Salutations", "Sup", "Ahoy", "Hiya"]
+
+# Collection of emojis
+emojis = ["🚀", "🎉", "✨", "💥", "🔥", "🌟", "🥳", "🤖"]
 
 class Greeter:
     def __init__(self, name="World", build_number=None):
         self.name = name
         self.build_number = build_number
-        self.greeting = random.choice(greetings)  # Random greeting each time
+        self.greeting = random.choice(greetings)
+        self.emoji = random.choice(emojis)  # Pick a random emoji
 
     def greet(self):
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        msg = f"[{current_time}] {self.greeting}, {self.name}!"
-        
-        # Random chance to add a rocket emoji
+        msg = f"[{current_time}] {self.greeting}, {self.name}! {self.emoji}"
         if self.build_number:
-            if random.random() < 0.5:
-                msg += f" 🚀 (Build #{self.build_number})"
-            else:
-                msg += f" (Build #{self.build_number})"
-
-        # Optional ASCII art if pyfiglet is installed
+            msg += f" (Build #{self.build_number})"
         if Figlet:
             f = Figlet(font='slant')
             msg = f.renderText(msg)
@@ -43,3 +39,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# Party mode enabled!
